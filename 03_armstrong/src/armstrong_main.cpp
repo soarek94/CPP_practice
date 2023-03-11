@@ -3,7 +3,19 @@
 bool isArmstrongNumber(int number)
 {
 	// TODO: implement some functionality to see if this number is an armstrong number
+	int copy_number, digit = 0, sum = 0;
+	copy_number = number; //we need a copy of our number;
+	while (copy_number != 0)
+	{
+		digit = copy_number % 10;
+		sum = sum + pow(digit, 3);
+		copy_number = copy_number / 10; //next digit;
 
+	}
+
+	if (sum == number)
+		return true;
+	else
 	return false;
 }
 
@@ -47,10 +59,11 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-	int readNumber = 0;
 	// Get the first argument
 	std::string argumentAsString = argv[1];
-	
+	//const char* argumentAsCharArray = argumentAsString.c_str();
+	int readNumber = atoi(argumentAsString.c_str());
+
 	// TODO: read number / cast to integer
 
 	printIsArmstrong(readNumber);

@@ -28,13 +28,14 @@ struct Book
 	int id;
 	char title[50];
 
-	int numAuthors;
+	int numAuthors = 0;
 	Author authors[5];
 
 	void addAuthor(Author author)
 	{
 		// TODO: add an author to the container authors array.
 		numAuthors++;
+		authors[numAuthors]=
 	}
 
 	void print()
